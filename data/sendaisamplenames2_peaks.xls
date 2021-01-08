@@ -1,0 +1,5 @@
+chr	start	end	name	score	strand	thickStart	thickEnd	itemRgb	blockCount	blockSizes	blockStarts	enrichmentScore
+Sendai	1401	1750	NP	0	+	1401	1750	0	1	349	0	2.63413173003039
+Sendai	2101	2500	C	0	+	2101	2500	0	1	399	0	2.3714610808141
+Sendai	2651	2750	P	0	+	2651	2750	0	1	99	0	1.55859647169279
+Sendai	3251	3600	P	0	+	3251	3600	0	1	349	0	3.35172603434984
