@@ -22,6 +22,7 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
@@ -32,6 +33,8 @@
 <script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
 <link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
 <script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -273,6 +276,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -307,13 +313,27 @@ $(document).ready(function () {
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/weiyubai/Sendai_Analysis">
+    <span class="fas fa-github"></span>
+     
+    Source code
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
 <div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
 
@@ -475,16 +495,16 @@ data/sendaisamplenames2_peaks.xls
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongf84ed48"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> f84ed48 </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomweiyubaiSendaiAnalysistreeb1baf170c5fcbe335b6d1dfa3e3cc1b92cb0ebb2targetblankb1baf17a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/weiyubai/Sendai_Analysis/tree/b1baf170c5fcbe335b6d1dfa3e3cc1b92cb0ebb2" target="_blank">b1baf17</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongf84ed48" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomweiyubaiSendaiAnalysistreeb1baf170c5fcbe335b6d1dfa3e3cc1b92cb0ebb2targetblankb1baf17a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version f84ed48. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/weiyubai/Sendai_Analysis/tree/b1baf170c5fcbe335b6d1dfa3e3cc1b92cb0ebb2" target="_blank">b1baf17</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -497,10 +517,6 @@ Ignored files:
 Untracked files:
     Untracked:  data/Mocksamplenames1_peaks.xls
     Untracked:  data/sendaisamplenames2_peaks.xls
-
-Unstaged changes:
-    Deleted:    analysis/about.Rmd
-    Deleted:    analysis/license.Rmd
 
 </code></pre>
 <p>
@@ -544,7 +560,41 @@ Message
 Rmd
 </td>
 <td>
-f84ed48
+<a href="https://github.com/weiyubai/Sendai_Analysis/blob/b1baf170c5fcbe335b6d1dfa3e3cc1b92cb0ebb2/analysis/MOCK_Sendai_Infected.Rmd" target="_blank">b1baf17</a>
+</td>
+<td>
+weiyubai
+</td>
+<td>
+2021-01-08
+</td>
+<td>
+Publish the initial files for myproject
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/weiyubai/Sendai_Analysis/6767d51d7bd9847d4f7e4310ffcc264b67201767/docs/MOCK_Sendai_Infected.html" target="_blank">6767d51</a>
+</td>
+<td>
+weiyubai
+</td>
+<td>
+2021-01-08
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/weiyubai/Sendai_Analysis/blob/f84ed4870b3dd6a5a02130cee22941d511647fa0/analysis/MOCK_Sendai_Infected.Rmd" target="_blank">f84ed48</a>
 </td>
 <td>
 weiyubai
@@ -563,10 +613,8 @@ Publish the initial files for myproject
 </div>
 </div>
 </div>
-<hr />
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
-<p>##Mock_Infected (sample1)</p>
+<p>Introduction</p>
+<p>Mock_Infected (sample1)</p>
 <pre class="r"><code>library(m6Amonster)
 samplenames1 &lt;- c(&quot;MockInfected1&quot;,&quot;MockInfected2&quot;,&quot;MockInfected3&quot;)
 gtf &lt;- &quot;/home/bai/sendai.gtf&quot;
@@ -583,14 +631,14 @@ Gene model obtained from gtf file...
 counting reads for each genes, this step may takes a few hours....
 Hyper-thread registered: TRUE 
 Using 2 thread(s) to count reads in continuous bins...
-Time used to count reads: 0.0101154804229736 mins... </code></pre>
+Time used to count reads: 0.0102719148000081 mins... </code></pre>
 <pre class="r"><code>Mock_Infect &lt;- m6Amonster:::callPeakBinomial(Mock_Infect)
 Mock_peaks &lt;- reportConsistentPeak(Mock_Infect, samplenames = samplenames1 )</code></pre>
 <pre><code>Reporting peak concsistent in all samples for
  MockInfected1 MockInfected2 MockInfected3 
 Hyper-thread registered: TRUE 
 Using 1 thread(s) to report merged report...
-Time used to report peaks: 0.00602081616719564 mins... </code></pre>
+Time used to report peaks: 0.00579009056091309 mins... </code></pre>
 <pre class="r"><code>annotation &lt;- read.table(&quot;/home/bai/Sendai_annotation.txt&quot;,sep = &#39;\t&#39;,header = T)
 anno.gr &lt;- makeGRangesFromDataFrame(annotation,keep.extra.columns = T)
 Mock_vgRNA_gr &lt;- makeGRangesFromDataFrame(Mock_peaks)
@@ -605,11 +653,126 @@ DT::datatable(dplyr::filter(Mock_peaks,enrichmentScore&gt;1.5), options = list(s
 <pre class="r"><code>sendai_plot &lt;- gtfToGeneModel( &quot;/home/bai/sendai.gtf&quot;)
  library(&quot;MyTools&quot;)
 plotVirusCov(Mock_Infect$bamPath.ip,Mock_Infect$bamPath.input,sendai_plot,libraryType = &quot;opposite&quot;,center = mean,annotation)+scale_fill_discrete(name = &quot;IP&quot;,labels = c(&quot;Genome&quot;,&quot;anti-Genome&quot;))+ xlab(&quot;Genome location&quot;) + ylab(&quot;Normalized coverage&quot;) + scale_colour_discrete(name = &quot;INPUT&quot;,labels = c(&quot;Genome&quot;,&quot;anti-Genome&quot;))+theme(legend.text = element_text(color = &quot;black&quot;,size = 18), legend.title = element_text(color = &quot;black&quot;,size = 20),axis.text = element_text(color = &quot;black&quot;,size = 18),axis.title = element_text(color = &quot;black&quot;,size = 20) )</code></pre>
-<p><img src="figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-2-1.png" width="2400" style="display: block; margin: auto;" /> Plot the positive strand (Mock)</p>
+<p><img src="figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-2-1.png" width="2400" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-2-1">
+Past versions of unnamed-chunk-2-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-2-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/weiyubai/Sendai_Analysis/blob/6767d51d7bd9847d4f7e4310ffcc264b67201767/docs/figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-2-1.png" target="_blank">6767d51</a>
+</td>
+<td>
+weiyubai
+</td>
+<td>
+2021-01-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Plot the positive strand (Mock)</p>
 <pre class="r"><code>plotVirusCov(Mock_Infect$bamPath.ip,Mock_Infect$bamPath.input,sendai_plot,libraryType = &quot;opposite&quot;,center = mean,annotation, hideStrand = &quot;-&quot;)+scale_fill_discrete(name = &quot;IP&quot;,labels = c(&quot;anti-Genome&quot;))+ xlab(&quot;Genome location&quot;) + ylab(&quot;Normalized coverage&quot;) + scale_colour_discrete(name = &quot;INPUT&quot;,labels = c(&quot;anti-Genome&quot;))+theme(legend.text = element_text(color = &quot;black&quot;,size = 18), legend.title = element_text(color = &quot;black&quot;,size = 20),axis.text = element_text(color = &quot;black&quot;,size = 18),axis.title = element_text(color = &quot;black&quot;,size = 20) )</code></pre>
-<p><img src="figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-3-1.png" width="2400" style="display: block; margin: auto;" /> Plot the negative strand(Mock)</p>
+<p><img src="figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-3-1.png" width="2400" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-3-1">
+Past versions of unnamed-chunk-3-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-3-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/weiyubai/Sendai_Analysis/blob/6767d51d7bd9847d4f7e4310ffcc264b67201767/docs/figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-3-1.png" target="_blank">6767d51</a>
+</td>
+<td>
+weiyubai
+</td>
+<td>
+2021-01-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Plot the negative strand(Mock)</p>
 <pre class="r"><code>plotVirusCov(Mock_Infect$bamPath.ip,Mock_Infect$bamPath.input,sendai_plot,libraryType = &quot;opposite&quot;,center = mean,annotation, hideStrand = &quot;+&quot;)+scale_fill_discrete(name = &quot;IP&quot;,labels = c(&quot;Genome&quot;))+ xlab(&quot;Genome location&quot;) + ylab(&quot;Normalized coverage&quot;) + scale_colour_discrete(name = &quot;INPUT&quot;,labels = c(&quot;Genome&quot;))+theme(legend.text = element_text(color = &quot;black&quot;,size = 18), legend.title = element_text(color = &quot;black&quot;,size = 20),axis.text = element_text(color = &quot;black&quot;,size = 18),axis.title = element_text(color = &quot;black&quot;,size = 20) )</code></pre>
-<p><img src="figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-4-1.png" width="2400" style="display: block; margin: auto;" /> ## Sendai Infected (sample2)</p>
+<p><img src="figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-4-1.png" width="2400" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-4-1">
+Past versions of unnamed-chunk-4-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-4-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/weiyubai/Sendai_Analysis/blob/6767d51d7bd9847d4f7e4310ffcc264b67201767/docs/figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-4-1.png" target="_blank">6767d51</a>
+</td>
+<td>
+weiyubai
+</td>
+<td>
+2021-01-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="sendai-infected-sample2" class="section level2">
+<h2>Sendai Infected (sample2)</h2>
 <pre class="r"><code>library(m6Amonster)
 samplenames2 &lt;- c(&quot;SendaiInfected1&quot;,&quot;SendaiInfected2&quot;,&quot;SendaiInfected3&quot;)
 gtf &lt;- &quot;/home/bai/sendai.gtf&quot;
@@ -626,14 +789,14 @@ Gene model obtained from gtf file...
 counting reads for each genes, this step may takes a few hours....
 Hyper-thread registered: TRUE 
 Using 2 thread(s) to count reads in continuous bins...
-Time used to count reads: 0.704406253496806 mins... </code></pre>
+Time used to count reads: 0.680931667486827 mins... </code></pre>
 <pre class="r"><code>sendai_infect &lt;- m6Amonster:::callPeakBinomial(sendai_infect)
 sendai_peaks &lt;- reportConsistentPeak(sendai_infect, samplenames = samplenames2 )</code></pre>
 <pre><code>Reporting peak concsistent in all samples for
  SendaiInfected1 SendaiInfected2 SendaiInfected3 
 Hyper-thread registered: TRUE 
 Using 1 thread(s) to report merged report...
-Time used to report peaks: 0.00848157405853272 mins... </code></pre>
+Time used to report peaks: 0.00848469734191895 mins... </code></pre>
 <pre class="r"><code>annotation &lt;- read.table(&quot;/home/bai/Sendai_annotation.txt&quot;,sep = &#39;\t&#39;,header = T)
 anno.gr &lt;- makeGRangesFromDataFrame(annotation,keep.extra.columns = T)
 Sendai_gr &lt;- makeGRangesFromDataFrame(sendai_peaks)
@@ -646,11 +809,124 @@ DT::datatable(dplyr::filter(sendai_peaks,enrichmentScore&gt;1.5), options = list
 <p><div id="htmlwidget-58e7ab77d3086d72967b" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-58e7ab77d3086d72967b">{"x":{"filter":"none","data":[["Sendai","Sendai","Sendai","Sendai"],[1401,2101,2651,3251],[1750,2500,2750,3600],["NP","C","P","P"],[0,0,0,0],["+","+","+","+"],[1401,2101,2651,3251],[1750,2500,2750,3600],[0,0,0,0],[1,1,1,1],["349","399","99","349"],["0","0","0","0"],[2.63413173003039,2.3714610808141,1.55859647169279,3.35172603434984]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>chr<\/th>\n      <th>start<\/th>\n      <th>end<\/th>\n      <th>name<\/th>\n      <th>score<\/th>\n      <th>strand<\/th>\n      <th>thickStart<\/th>\n      <th>thickEnd<\/th>\n      <th>itemRgb<\/th>\n      <th>blockCount<\/th>\n      <th>blockSizes<\/th>\n      <th>blockStarts<\/th>\n      <th>enrichmentScore<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"keys":true,"pageLength":10,"columnDefs":[{"className":"dt-right","targets":[1,2,4,6,7,8,9,12]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script> #Plot coverage of Sendai samplenames mRNA</p>
 <pre class="r"><code>plotVirusCov(sendai_infect$bamPath.ip, sendai_infect$bamPath.input ,sendai_plot,libraryType = &quot;opposite&quot;,center = mean,annotation)+scale_fill_discrete(name = &quot;IP&quot;,labels = c(&quot;mRNA&quot;,&quot;anti-Genome&quot;))+ xlab(&quot;Genome location&quot;) + ylab(&quot;Normalized coverage&quot;) + scale_colour_discrete(name = &quot;INPUT&quot;,labels = c(&quot;mRNA&quot;,&quot;anti-Genome&quot;))+theme(legend.text = element_text(color = &quot;black&quot;,size = 18), legend.title = element_text(color = &quot;black&quot;,size = 20),axis.text = element_text(color = &quot;black&quot;,size = 18),axis.title = element_text(color = &quot;black&quot;,size = 20) )</code></pre>
-<p><img src="figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-6-1.png" width="2400" style="display: block; margin: auto;" /> Plot the positive strand (Sendai)</p>
+<p><img src="figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-6-1.png" width="2400" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-6-1">
+Past versions of unnamed-chunk-6-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-6-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/weiyubai/Sendai_Analysis/blob/6767d51d7bd9847d4f7e4310ffcc264b67201767/docs/figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-6-1.png" target="_blank">6767d51</a>
+</td>
+<td>
+weiyubai
+</td>
+<td>
+2021-01-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Plot the positive strand (Sendai)</p>
 <pre class="r"><code>plotVirusCov(sendai_infect$bamPath.ip, sendai_infect$bamPath.input ,sendai_plot,libraryType = &quot;opposite&quot;,center = mean,annotation, hideStrand = &quot;-&quot;)+scale_fill_discrete(name = &quot;IP&quot;,labels = c(&quot;mRNA&quot;))+ xlab(&quot;Genome location&quot;) + ylab(&quot;Normalized coverage&quot;) + scale_colour_discrete(name = &quot;INPUT&quot;,labels = c(&quot;mRNA&quot;))+theme(legend.text = element_text(color = &quot;black&quot;,size = 18), legend.title = element_text(color = &quot;black&quot;,size = 20),axis.text = element_text(color = &quot;black&quot;,size = 18),axis.title = element_text(color = &quot;black&quot;,size = 20) )</code></pre>
-<p><img src="figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-7-1.png" width="2400" style="display: block; margin: auto;" /> Plot the negative strand(Sendai)</p>
+<p><img src="figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-7-1.png" width="2400" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-7-1">
+Past versions of unnamed-chunk-7-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-7-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/weiyubai/Sendai_Analysis/blob/6767d51d7bd9847d4f7e4310ffcc264b67201767/docs/figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-7-1.png" target="_blank">6767d51</a>
+</td>
+<td>
+weiyubai
+</td>
+<td>
+2021-01-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Plot the negative strand(Sendai)</p>
 <pre class="r"><code>plotVirusCov(sendai_infect$bamPath.ip, sendai_infect$bamPath.input ,sendai_plot,libraryType = &quot;opposite&quot;,center = mean,annotation, hideStrand = &quot;+&quot;)+scale_fill_discrete(name = &quot;IP&quot;,labels = c(&quot;anti-Genome&quot;))+ xlab(&quot;Genome location&quot;) + ylab(&quot;Normalized coverage&quot;) + scale_colour_discrete(name = &quot;INPUT&quot;,labels = c(&quot;anti-Genome&quot;))+theme(legend.text = element_text(color = &quot;black&quot;,size = 18), legend.title = element_text(color = &quot;black&quot;,size = 20),axis.text = element_text(color = &quot;black&quot;,size = 18),axis.title = element_text(color = &quot;black&quot;,size = 20) )</code></pre>
 <p><img src="figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-8-1.png" width="2400" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-8-1">
+Past versions of unnamed-chunk-8-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-8-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/weiyubai/Sendai_Analysis/blob/6767d51d7bd9847d4f7e4310ffcc264b67201767/docs/figure/MOCK_Sendai_Infected.Rmd/unnamed-chunk-8-1.png" target="_blank">6767d51</a>
+</td>
+<td>
+weiyubai
+</td>
+<td>
+2021-01-08
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -863,6 +1139,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
