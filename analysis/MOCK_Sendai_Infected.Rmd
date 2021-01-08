@@ -8,9 +8,7 @@ output:
 editor_options:
   chunk_output_type: inline
 ---
-
----
-## Introduction
+Introduction
 ```{r setup, echo=FALSE, results="hide"}
 knitr::opts_chunk$set(
 	error = FALSE,
@@ -22,7 +20,7 @@ knitr::opts_chunk$set(
 	tidy = FALSE
 )
 ```
-##Mock_Infected (sample1)
+Mock_Infected (sample1)
 ```{r}
 library(m6Amonster)
 samplenames1 <- c("MockInfected1","MockInfected2","MockInfected3")
