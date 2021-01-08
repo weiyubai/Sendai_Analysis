@@ -10,7 +10,7 @@ navbar:
   right:
   - icon: fa-github
     text: Source code
-    href: https://github.com/weyubai/Sendai_Analysis
+    href: https://github.com/weiyubai/Sendai_Analysis
 output:
   workflowr::wflow_html:
     toc: yes
