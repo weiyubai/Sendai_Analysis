@@ -1,0 +1,105 @@
+---
+title: "sendai_infected_analysis"
+author: "weiyubai"
+date: "2021-01-08"
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: inline
+---
+
+---
+## Introduction
+```{r setup, echo=FALSE, results="hide"}
+knitr::opts_chunk$set(
+	error = FALSE,
+	message = FALSE,
+	warning = TRUE,
+	cache = FALSE,
+	cache.lazy = FALSE,
+	dev = "png",
+	tidy = FALSE
+)
+```
+##Mock_Infected (sample1)
+```{r}
+library(m6Amonster)
+samplenames1 <- c("MockInfected1","MockInfected2","MockInfected3")
+gtf <- "/home/bai/sendai.gtf"
+Mock_Infect <- countReads(samplenames = samplenames1 ,
+                          gtf = gtf,
+                          bamFolder = "/media/bai/Data/data_zhang/SEQ/result/sendai/MeRIP/sort",
+                          outputDir = "/home/bai/Sendai_Analysis/data",
+                          modification = "IP",
+                          threads = 2
+                        )
+Mock_Infect <- m6Amonster:::callPeakBinomial(Mock_Infect)
+Mock_peaks <- reportConsistentPeak(Mock_Infect, samplenames = samplenames1 )
+annotation <- read.table("/home/bai/Sendai_annotation.txt",sep = '\t',header = T)
+anno.gr <- makeGRangesFromDataFrame(annotation,keep.extra.columns = T)
+Mock_vgRNA_gr <- makeGRangesFromDataFrame(Mock_peaks)
+anno.Mock.vgRNA <- as.data.frame(findOverlaps(Mock_vgRNA_gr, anno.gr, ignore.strand = T) )
+Mock_peaks$name <- as.character(Mock_peaks$name)
+Mock_peaks$name [anno.Mock.vgRNA$queryHits] <- as.character(annotation[anno.Mock.vgRNA$subjectHits,"gene"])
+ 
+write.table(dplyr::filter(Mock_peaks,enrichmentScore>1.5),file = "/home/bai/Sendai_Analysis/data/Mocksamplenames1_peaks.xls", sep = "\t",col.names = T,row.names = F,quote = F)
+DT::datatable(dplyr::filter(Mock_peaks,enrichmentScore>1.5), options = list(scrollX = TRUE, keys = TRUE, pageLength = 10),rownames = F)
+
+ 
+```
+Plot coverage of Mock samplenames mRNA(Mocke)
+```{r,  fig.height=8, fig.width=25}
+sendai_plot <- gtfToGeneModel( "/home/bai/sendai.gtf")
+ library("MyTools")
+plotVirusCov(Mock_Infect$bamPath.ip,Mock_Infect$bamPath.input,sendai_plot,libraryType = "opposite",center = mean,annotation)+scale_fill_discrete(name = "IP",labels = c("Genome","anti-Genome"))+ xlab("Genome location") + ylab("Normalized coverage") + scale_colour_discrete(name = "INPUT",labels = c("Genome","anti-Genome"))+theme(legend.text = element_text(color = "black",size = 18), legend.title = element_text(color = "black",size = 20),axis.text = element_text(color = "black",size = 18),axis.title = element_text(color = "black",size = 20) )
+```
+Plot the positive strand (Mock)
+```{r,fig.height=8, fig.width=25}
+plotVirusCov(Mock_Infect$bamPath.ip,Mock_Infect$bamPath.input,sendai_plot,libraryType = "opposite",center = mean,annotation, hideStrand = "-")+scale_fill_discrete(name = "IP",labels = c("anti-Genome"))+ xlab("Genome location") + ylab("Normalized coverage") + scale_colour_discrete(name = "INPUT",labels = c("anti-Genome"))+theme(legend.text = element_text(color = "black",size = 18), legend.title = element_text(color = "black",size = 20),axis.text = element_text(color = "black",size = 18),axis.title = element_text(color = "black",size = 20) )
+```
+Plot the negative strand(Mock)
+```{r,  fig.height=8, fig.width=25}
+plotVirusCov(Mock_Infect$bamPath.ip,Mock_Infect$bamPath.input,sendai_plot,libraryType = "opposite",center = mean,annotation, hideStrand = "+")+scale_fill_discrete(name = "IP",labels = c("Genome"))+ xlab("Genome location") + ylab("Normalized coverage") + scale_colour_discrete(name = "INPUT",labels = c("Genome"))+theme(legend.text = element_text(color = "black",size = 18), legend.title = element_text(color = "black",size = 20),axis.text = element_text(color = "black",size = 18),axis.title = element_text(color = "black",size = 20) )
+```
+## Sendai Infected (sample2)
+```{r}
+library(m6Amonster)
+samplenames2 <- c("SendaiInfected1","SendaiInfected2","SendaiInfected3")
+gtf <- "/home/bai/sendai.gtf"
+sendai_infect <- countReads(samplenames = samplenames2 ,
+                          gtf = gtf,
+                          bamFolder = "/media/bai/Data/data_zhang/SEQ/result/sendai/MeRIP/sort",
+                          outputDir = "/home/bai/Sendai_Analysis/data",
+                          modification = "IP",
+                          threads = 2
+                        )
+sendai_infect <- m6Amonster:::callPeakBinomial(sendai_infect)
+sendai_peaks <- reportConsistentPeak(sendai_infect, samplenames = samplenames2 )
+annotation <- read.table("/home/bai/Sendai_annotation.txt",sep = '\t',header = T)
+anno.gr <- makeGRangesFromDataFrame(annotation,keep.extra.columns = T)
+Sendai_gr <- makeGRangesFromDataFrame(sendai_peaks)
+anno.Sendai.infect <- as.data.frame(findOverlaps(Sendai_gr, anno.gr, ignore.strand = T) )
+sendai_peaks$name <- as.character(sendai_peaks$name)
+sendai_peaks$name [anno.Sendai.infect$queryHits] <- as.character(annotation[anno.Sendai.infect$subjectHits,"gene"])
+ 
+write.table(dplyr::filter(sendai_peaks,enrichmentScore>1.5),file = "/home/bai/Sendai_Analysis/data/sendaisamplenames2_peaks.xls", sep = "\t",col.names = T,row.names = F,quote = F)
+DT::datatable(dplyr::filter(sendai_peaks,enrichmentScore>1.5), options = list(scrollX = TRUE, keys = TRUE, pageLength = 10),rownames = F)
+```
+#Plot coverage of Sendai samplenames mRNA
+```{r,  fig.height=8, fig.width=25}
+
+
+plotVirusCov(sendai_infect$bamPath.ip, sendai_infect$bamPath.input ,sendai_plot,libraryType = "opposite",center = mean,annotation)+scale_fill_discrete(name = "IP",labels = c("mRNA","anti-Genome"))+ xlab("Genome location") + ylab("Normalized coverage") + scale_colour_discrete(name = "INPUT",labels = c("mRNA","anti-Genome"))+theme(legend.text = element_text(color = "black",size = 18), legend.title = element_text(color = "black",size = 20),axis.text = element_text(color = "black",size = 18),axis.title = element_text(color = "black",size = 20) )
+```
+Plot the positive strand (Sendai)
+```{r,fig.height=8, fig.width=25}
+plotVirusCov(sendai_infect$bamPath.ip, sendai_infect$bamPath.input ,sendai_plot,libraryType = "opposite",center = mean,annotation, hideStrand = "-")+scale_fill_discrete(name = "IP",labels = c("mRNA"))+ xlab("Genome location") + ylab("Normalized coverage") + scale_colour_discrete(name = "INPUT",labels = c("mRNA"))+theme(legend.text = element_text(color = "black",size = 18), legend.title = element_text(color = "black",size = 20),axis.text = element_text(color = "black",size = 18),axis.title = element_text(color = "black",size = 20) )
+```
+Plot the negative strand(Sendai)
+```{r,  fig.height=8, fig.width=25}
+plotVirusCov(sendai_infect$bamPath.ip, sendai_infect$bamPath.input ,sendai_plot,libraryType = "opposite",center = mean,annotation, hideStrand = "+")+scale_fill_discrete(name = "IP",labels = c("anti-Genome"))+ xlab("Genome location") + ylab("Normalized coverage") + scale_colour_discrete(name = "INPUT",labels = c("anti-Genome"))+theme(legend.text = element_text(color = "black",size = 18), legend.title = element_text(color = "black",size = 20),axis.text = element_text(color = "black",size = 18),axis.title = element_text(color = "black",size = 20) )
+```
+
+
+

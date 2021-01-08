@@ -5,10 +5,9 @@ navbar:
   left:
   - text: Home
     href: index.html
-  - text: About
-    href: about.html
-  - text: License
-    href: license.html
+  - text: MOCK_Infected and Sendai_Infected
+    href: MOCK_Sendai_Infected.html
+
 output:
   workflowr::wflow_html:
     toc: yes
