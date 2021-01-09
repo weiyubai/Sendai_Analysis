@@ -364,7 +364,7 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-01-08
+<strong>Last updated:</strong> 2021-01-09
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
@@ -495,16 +495,16 @@ data/sendaisamplenames2_peaks.xls
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomweiyubaiSendaiAnalysistreeb1baf170c5fcbe335b6d1dfa3e3cc1b92cb0ebb2targetblankb1baf17a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/weiyubai/Sendai_Analysis/tree/b1baf170c5fcbe335b6d1dfa3e3cc1b92cb0ebb2" target="_blank">b1baf17</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomweiyubaiSendaiAnalysistree277b81cdddd23474e44b1cca098214089fe5e52btargetblank277b81ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/weiyubai/Sendai_Analysis/tree/277b81cdddd23474e44b1cca098214089fe5e52b" target="_blank">277b81c</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomweiyubaiSendaiAnalysistreeb1baf170c5fcbe335b6d1dfa3e3cc1b92cb0ebb2targetblankb1baf17a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomweiyubaiSendaiAnalysistree277b81cdddd23474e44b1cca098214089fe5e52btargetblank277b81ca" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/weiyubai/Sendai_Analysis/tree/b1baf170c5fcbe335b6d1dfa3e3cc1b92cb0ebb2" target="_blank">b1baf17</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/weiyubai/Sendai_Analysis/tree/277b81cdddd23474e44b1cca098214089fe5e52b" target="_blank">277b81c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -512,11 +512,10 @@ Note that you need to be careful to ensure that all relevant files for the analy
 <pre><code>
 Ignored files:
     Ignored:    .Rhistory
+    Ignored:    analysis/.RData
     Ignored:    analysis/.Rhistory
-
-Untracked files:
-    Untracked:  data/Mocksamplenames1_peaks.xls
-    Untracked:  data/sendaisamplenames2_peaks.xls
+    Ignored:    data/.RData
+    Ignored:    data/.Rhistory
 
 </code></pre>
 <p>
@@ -555,6 +554,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/weiyubai/Sendai_Analysis/blob/277b81cdddd23474e44b1cca098214089fe5e52b/analysis/MOCK_Sendai_Infected.Rmd" target="_blank">277b81c</a>
+</td>
+<td>
+weiyubai
+</td>
+<td>
+2021-01-09
+</td>
+<td>
+Publish the initial files for myproject
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/weiyubai/Sendai_Analysis/8b42d235f0e77cecf72f043f43cf7186175cf52f/docs/MOCK_Sendai_Infected.html" target="_blank">8b42d23</a>
+</td>
+<td>
+weiyubai
+</td>
+<td>
+2021-01-08
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -620,7 +653,7 @@ samplenames1 &lt;- c(&quot;MockInfected1&quot;,&quot;MockInfected2&quot;,&quot;M
 gtf &lt;- &quot;/home/bai/sendai.gtf&quot;
 Mock_Infect &lt;- countReads(samplenames = samplenames1 ,
                           gtf = gtf,
-                          bamFolder = &quot;/media/bai/Data/data_zhang/SEQ/result/sendai/MeRIP/sort&quot;,
+                          bamFolder = &quot;/media/bai/Data1/data_zhang/SEQ/result/sendai/MeRIP/sort&quot;,
                           outputDir = &quot;/home/bai/Sendai_Analysis/data&quot;,
                           modification = &quot;IP&quot;,
                           threads = 2
@@ -631,14 +664,14 @@ Gene model obtained from gtf file...
 counting reads for each genes, this step may takes a few hours....
 Hyper-thread registered: TRUE 
 Using 2 thread(s) to count reads in continuous bins...
-Time used to count reads: 0.0102719148000081 mins... </code></pre>
+Time used to count reads: 0.010737411181132 mins... </code></pre>
 <pre class="r"><code>Mock_Infect &lt;- m6Amonster:::callPeakBinomial(Mock_Infect)
 Mock_peaks &lt;- reportConsistentPeak(Mock_Infect, samplenames = samplenames1 )</code></pre>
 <pre><code>Reporting peak concsistent in all samples for
  MockInfected1 MockInfected2 MockInfected3 
 Hyper-thread registered: TRUE 
 Using 1 thread(s) to report merged report...
-Time used to report peaks: 0.00579009056091309 mins... </code></pre>
+Time used to report peaks: 0.00587281783421834 mins... </code></pre>
 <pre class="r"><code>annotation &lt;- read.table(&quot;/home/bai/Sendai_annotation.txt&quot;,sep = &#39;\t&#39;,header = T)
 anno.gr &lt;- makeGRangesFromDataFrame(annotation,keep.extra.columns = T)
 Mock_vgRNA_gr &lt;- makeGRangesFromDataFrame(Mock_peaks)
@@ -649,7 +682,7 @@ Mock_peaks$name [anno.Mock.vgRNA$queryHits] &lt;- as.character(annotation[anno.M
 write.table(dplyr::filter(Mock_peaks,enrichmentScore&gt;1.5),file = &quot;/home/bai/Sendai_Analysis/data/Mocksamplenames1_peaks.xls&quot;, sep = &quot;\t&quot;,col.names = T,row.names = F,quote = F)
 DT::datatable(dplyr::filter(Mock_peaks,enrichmentScore&gt;1.5), options = list(scrollX = TRUE, keys = TRUE, pageLength = 10),rownames = F)</code></pre>
 <p><div id="htmlwidget-ff121dc23153c2dd91db" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ff121dc23153c2dd91db">{"x":{"filter":"none","data":[["Sendai","Sendai","Sendai","Sendai"],[1451,2301,3401,3501],[1550,2350,3450,3550],["NP","C","P","P"],[5.51097613903863e-125,3.84640991894886e-75,2.45144952025122e-30,5.15215908854579e-80],["+","+","+","+"],[1451,2301,3401,3501],[1550,2350,3450,3550],[0,0,0,0],[1,1,1,1],["99","49","49","49"],["0","0","0","0"],[2.58866053365579,2.609447031436,2.62532373583432,3.52007506664448]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>chr<\/th>\n      <th>start<\/th>\n      <th>end<\/th>\n      <th>name<\/th>\n      <th>score<\/th>\n      <th>strand<\/th>\n      <th>thickStart<\/th>\n      <th>thickEnd<\/th>\n      <th>itemRgb<\/th>\n      <th>blockCount<\/th>\n      <th>blockSizes<\/th>\n      <th>blockStarts<\/th>\n      <th>enrichmentScore<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"keys":true,"pageLength":10,"columnDefs":[{"className":"dt-right","targets":[1,2,4,6,7,8,9,12]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script> Plot coverage of Mock samplenames mRNA(Mocke)</p>
+<script type="application/json" data-for="htmlwidget-ff121dc23153c2dd91db">{"x":{"filter":"none","data":[["Sendai","Sendai","Sendai","Sendai"],[1451,2301,3401,3501],[1550,2350,3450,3550],["NP","C","P","P"],[5.51097613903863e-125,3.84640991894886e-75,2.45144952025122e-30,5.15215908854579e-80],["+","+","+","+"],[1451,2301,3401,3501],[1550,2350,3450,3550],[0,0,0,0],[1,1,1,1],["99","49","49","49"],["0","0","0","0"],[2.58866053365579,2.609447031436,2.62532373583432,3.52007506664448]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>chr<\/th>\n      <th>start<\/th>\n      <th>end<\/th>\n      <th>name<\/th>\n      <th>score<\/th>\n      <th>strand<\/th>\n      <th>thickStart<\/th>\n      <th>thickEnd<\/th>\n      <th>itemRgb<\/th>\n      <th>blockCount<\/th>\n      <th>blockSizes<\/th>\n      <th>blockStarts<\/th>\n      <th>enrichmentScore<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"keys":true,"pageLength":10,"columnDefs":[{"className":"dt-right","targets":[1,2,4,6,7,8,9,12]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script> Plot coverage of Mock samplenames mRNA(Mock)</p>
 <pre class="r"><code>sendai_plot &lt;- gtfToGeneModel( &quot;/home/bai/sendai.gtf&quot;)
  library(&quot;MyTools&quot;)
 plotVirusCov(Mock_Infect$bamPath.ip,Mock_Infect$bamPath.input,sendai_plot,libraryType = &quot;opposite&quot;,center = mean,annotation)+scale_fill_discrete(name = &quot;IP&quot;,labels = c(&quot;Genome&quot;,&quot;anti-Genome&quot;))+ xlab(&quot;Genome location&quot;) + ylab(&quot;Normalized coverage&quot;) + scale_colour_discrete(name = &quot;INPUT&quot;,labels = c(&quot;Genome&quot;,&quot;anti-Genome&quot;))+theme(legend.text = element_text(color = &quot;black&quot;,size = 18), legend.title = element_text(color = &quot;black&quot;,size = 20),axis.text = element_text(color = &quot;black&quot;,size = 18),axis.title = element_text(color = &quot;black&quot;,size = 20) )</code></pre>
@@ -778,7 +811,7 @@ samplenames2 &lt;- c(&quot;SendaiInfected1&quot;,&quot;SendaiInfected2&quot;,&qu
 gtf &lt;- &quot;/home/bai/sendai.gtf&quot;
 sendai_infect &lt;- countReads(samplenames = samplenames2 ,
                           gtf = gtf,
-                          bamFolder = &quot;/media/bai/Data/data_zhang/SEQ/result/sendai/MeRIP/sort&quot;,
+                          bamFolder = &quot;/media/bai/Data1/data_zhang/SEQ/result/sendai/MeRIP/sort&quot;,
                           outputDir = &quot;/home/bai/Sendai_Analysis/data&quot;,
                           modification = &quot;IP&quot;,
                           threads = 2
@@ -789,14 +822,14 @@ Gene model obtained from gtf file...
 counting reads for each genes, this step may takes a few hours....
 Hyper-thread registered: TRUE 
 Using 2 thread(s) to count reads in continuous bins...
-Time used to count reads: 0.680931667486827 mins... </code></pre>
+Time used to count reads: 0.701137546698252 mins... </code></pre>
 <pre class="r"><code>sendai_infect &lt;- m6Amonster:::callPeakBinomial(sendai_infect)
 sendai_peaks &lt;- reportConsistentPeak(sendai_infect, samplenames = samplenames2 )</code></pre>
 <pre><code>Reporting peak concsistent in all samples for
  SendaiInfected1 SendaiInfected2 SendaiInfected3 
 Hyper-thread registered: TRUE 
 Using 1 thread(s) to report merged report...
-Time used to report peaks: 0.00848469734191895 mins... </code></pre>
+Time used to report peaks: 0.00814306338628133 mins... </code></pre>
 <pre class="r"><code>annotation &lt;- read.table(&quot;/home/bai/Sendai_annotation.txt&quot;,sep = &#39;\t&#39;,header = T)
 anno.gr &lt;- makeGRangesFromDataFrame(annotation,keep.extra.columns = T)
 Sendai_gr &lt;- makeGRangesFromDataFrame(sendai_peaks)
@@ -937,7 +970,7 @@ weiyubai
 <pre class="r"><code>sessionInfo()</code></pre>
 <pre><code>R version 4.0.3 (2020-10-10)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 20.04.1 LTS
+Running under: Ubuntu 20.10
 
 Matrix products: default
 BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
@@ -1057,7 +1090,7 @@ loaded via a namespace (and not attached):
  [82] stringi_1.5.3                          
  [83] highr_0.8                              
  [84] lattice_0.20-41                        
- [85] Matrix_1.3-0                           
+ [85] Matrix_1.3-2                           
  [86] vegan_2.5-7                            
  [87] permute_0.9-5                          
  [88] vctrs_0.3.6                            
