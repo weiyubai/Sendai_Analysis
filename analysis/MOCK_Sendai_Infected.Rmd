@@ -27,7 +27,7 @@ samplenames1 <- c("MockInfected1","MockInfected2","MockInfected3")
 gtf <- "/home/bai/sendai.gtf"
 Mock_Infect <- countReads(samplenames = samplenames1 ,
                           gtf = gtf,
-                          bamFolder = "/media/bai/Data/data_zhang/SEQ/result/sendai/MeRIP/sort",
+                          bamFolder = "/media/bai/Data1/data_zhang/SEQ/result/sendai/MeRIP/sort",
                           outputDir = "/home/bai/Sendai_Analysis/data",
                           modification = "IP",
                           threads = 2
@@ -46,7 +46,7 @@ DT::datatable(dplyr::filter(Mock_peaks,enrichmentScore>1.5), options = list(scro
 
  
 ```
-Plot coverage of Mock samplenames mRNA(Mocke)
+Plot coverage of Mock samplenames mRNA(Mock)
 ```{r,  fig.height=8, fig.width=25}
 sendai_plot <- gtfToGeneModel( "/home/bai/sendai.gtf")
  library("MyTools")
@@ -67,7 +67,7 @@ samplenames2 <- c("SendaiInfected1","SendaiInfected2","SendaiInfected3")
 gtf <- "/home/bai/sendai.gtf"
 sendai_infect <- countReads(samplenames = samplenames2 ,
                           gtf = gtf,
-                          bamFolder = "/media/bai/Data/data_zhang/SEQ/result/sendai/MeRIP/sort",
+                          bamFolder = "/media/bai/Data1/data_zhang/SEQ/result/sendai/MeRIP/sort",
                           outputDir = "/home/bai/Sendai_Analysis/data",
                           modification = "IP",
                           threads = 2
