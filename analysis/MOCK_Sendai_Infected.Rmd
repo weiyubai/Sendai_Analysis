@@ -43,8 +43,8 @@ anno.Mock.vgRNA <- as.data.frame(findOverlaps(Mock_vgRNA_gr, anno.gr, ignore.str
 Mock_peaks$name <- as.character(Mock_peaks$name)
 Mock_peaks$name [anno.Mock.vgRNA$queryHits] <- as.character(annotation[anno.Mock.vgRNA$subjectHits,"gene"])
  
-write.table(dplyr::filter(Mock_peaks,enrichmentScore>1.5),file = "/home/bai/Sendai_Analysis/data/Mocksamplenames1_peaks.xls", sep = "\t",col.names = T,row.names = F,quote = F)
-DT::datatable(dplyr::filter(Mock_peaks,enrichmentScore>1.5), options = list(scrollX = TRUE, keys = TRUE, pageLength = 10),rownames = F)
+write.table(dplyr::filter(Mock_peaks),file = "/home/bai/Sendai_Analysis/data/Mocksamplenames1_peaks.xls", sep = "\t",col.names = T,row.names = F,quote = F)
+DT::datatable(dplyr::filter(Mock_peaks), options = list(scrollX = TRUE, keys = TRUE, pageLength = 10),rownames = F)
 
  
 ```
@@ -83,8 +83,8 @@ anno.Sendai.infect <- as.data.frame(findOverlaps(Sendai_gr, anno.gr, ignore.stra
 sendai_peaks$name <- as.character(sendai_peaks$name)
 sendai_peaks$name [anno.Sendai.infect$queryHits] <- as.character(annotation[anno.Sendai.infect$subjectHits,"gene"])
  
-write.table(dplyr::filter(sendai_peaks,enrichmentScore>1.5),file = "/home/bai/Sendai_Analysis/data/sendaisamplenames2_peaks.xls", sep = "\t",col.names = T,row.names = F,quote = F)
-DT::datatable(dplyr::filter(sendai_peaks,enrichmentScore>1.5), options = list(scrollX = TRUE, keys = TRUE, pageLength = 10),rownames = F)
+write.table(dplyr::filter(sendai_peaks),file = "/home/bai/Sendai_Analysis/data/sendaisamplenames2_peaks.xls", sep = "\t",col.names = T,row.names = F,quote = F)
+DT::datatable(dplyr::filter(sendai_peaks), options = list(scrollX = TRUE, keys = TRUE, pageLength = 10),rownames = F)
 ```
 #Plot coverage of Sendai samplenames mRNA
 ```{r,  fig.height=8, fig.width=25}
