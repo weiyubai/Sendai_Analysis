@@ -88,8 +88,6 @@ DT::datatable(dplyr::filter(sendai_peaks), options = list(scrollX = TRUE, keys =
 ```
 #Plot coverage of Sendai samplenames mRNA
 ```{r,  fig.height=8, fig.width=25}
-
-
 plotVirusCov(sendai_infect$bamPath.ip, sendai_infect$bamPath.input ,sendai_plot,libraryType = "opposite",center = mean,annotation)+scale_fill_discrete(name = "IP",labels = c("mRNA","anti-Genome"))+ xlab("Genome location") + ylab("Normalized coverage") + scale_colour_discrete(name = "INPUT",labels = c("mRNA","anti-Genome"))+theme(legend.text = element_text(color = "black",size = 18), legend.title = element_text(color = "black",size = 20),axis.text = element_text(color = "black",size = 18),axis.title = element_text(color = "black",size = 20) )
 ```
 Plot the positive strand (Sendai)
@@ -100,6 +98,15 @@ Plot the negative strand(Sendai)
 ```{r,  fig.height=8, fig.width=25}
 plotVirusCov(sendai_infect$bamPath.ip, sendai_infect$bamPath.input ,sendai_plot,libraryType = "opposite",center = mean,annotation, hideStrand = "+")+scale_fill_discrete(name = "IP",labels = c("anti-Genome"))+ xlab("Genome location") + ylab("Normalized coverage") + scale_colour_discrete(name = "INPUT",labels = c("anti-Genome"))+theme(legend.text = element_text(color = "black",size = 18), legend.title = element_text(color = "black",size = 20),axis.text = element_text(color = "black",size = 18),axis.title = element_text(color = "black",size = 20) )
 ```
-
-
-
+Plot the negative strand(Sendai repeat1)
+```{r,,  fig.height=8, fig.width=25}
+plotVirusCov(sendai_infect$bamPath.ip[1], sendai_infect$bamPath.input[1] ,sendai_plot,libraryType = "opposite",center = mean,annotation, hideStrand = "+")+scale_fill_discrete(name = "IP",labels = c("anti-Genome"))+ xlab("Genome location") + ylab("Normalized coverage") + scale_colour_discrete(name = "INPUT",labels = c("anti-Genome"))+theme(legend.text = element_text(color = "black",size = 18), legend.title = element_text(color = "black",size = 20),axis.text = element_text(color = "black",size = 18),axis.title = element_text(color = "black",size = 20) )+ggtitle("replicate1")
+```
+Plot the negative strand(Sendai repeat2)
+```{r,,  fig.height=8, fig.width=25}
+plotVirusCov(sendai_infect$bamPath.ip[2], sendai_infect$bamPath.input[2] ,sendai_plot,libraryType = "opposite",center = mean,annotation, hideStrand = "+")+scale_fill_discrete(name = "IP",labels = c("anti-Genome"))+ xlab("Genome location") + ylab("Normalized coverage") + scale_colour_discrete(name = "INPUT",labels = c("anti-Genome"))+theme(legend.text = element_text(color = "black",size = 18), legend.title = element_text(color = "black",size = 20),axis.text = element_text(color = "black",size = 18),axis.title = element_text(color = "black",size = 20) )+ggtitle("replicate2")
+```
+Plot the negative strand(Sendai repeat3)
+```{r,,  fig.height=8, fig.width=25}
+plotVirusCov(sendai_infect$bamPath.ip[3], sendai_infect$bamPath.input[3] ,sendai_plot,libraryType = "opposite",center = mean,annotation, hideStrand = "+")+scale_fill_discrete(name = "IP",labels = c("anti-Genome"))+ xlab("Genome location") + ylab("Normalized coverage") + scale_colour_discrete(name = "INPUT",labels = c("anti-Genome"))+theme(legend.text = element_text(color = "black",size = 18), legend.title = element_text(color = "black",size = 20),axis.text = element_text(color = "black",size = 18),axis.title = element_text(color = "black",size = 20) )+ggtitle("replicate3")
+```
